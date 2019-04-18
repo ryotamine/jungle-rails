@@ -18,10 +18,24 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
   
-  namespace :user do
-    root to: 'dashboard#show'
-    resources :login, only: [:index, :new, :create]
-  end
+  get 'register', to: 'users#new'
+  resources :users, only: [:index, :create]
+
+  get 'login', to: 'logins#new'
+  resources :users, only: [:index, :create]
+
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'logins#new'
+  post '/login' => 'logins#create'
+  get '/logout' => 'logins#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  # namespace :user do
+  #   root to: 'dashboard#show'
+  #   resources :login, only: [:index, :new, :create]
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
