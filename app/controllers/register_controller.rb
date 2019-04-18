@@ -4,4 +4,8 @@ class RegisterController < ActionController::Base
     @registers = Register.order(id: :desc).all
   end
 
+  def new
+    @register = Register.new
+  end
+
 end
