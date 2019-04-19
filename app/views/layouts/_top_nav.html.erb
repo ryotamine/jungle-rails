@@ -39,9 +39,13 @@
           </ul>
         </li>
         <li>
+        <% if cart.size != 0 %>
           <%= link_to cart_path do %>
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
+        <% else %>
+          <%= fa_icon "shopping-cart" %> Cart is Empty
+        <% end %>
         </li>
       </ul>
     </div>
