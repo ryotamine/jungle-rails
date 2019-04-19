@@ -2,10 +2,28 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    <h4>Thank you for your order!</h4>
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Qty Remaining</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |item| %>
+          <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <%= @order.total %>
+      <tfoot>
+    </table>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
