@@ -22,14 +22,17 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-          <dt>Rating</dt>
         </dl>
       </div>
+      <%= form_for [@product, Review.new] do |f| %>
+        <%= f.text_area :description %>
+        <%= f.select :rating, rate: "60x12" %>
+        <%= f.submit "Create" %>
+      <% end %>
       <% @reviews.each do |review| %>
         <%= review.description %>
       <% end %>
     </div>
-
   </article>
 
 </section>
