@@ -132,14 +132,22 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+user1 = User.create!({
+  first_name: 'a',
+  last_name: 'b',
+  email: 'ab@ab.com',
+  password: '123'
+})
+
 Review.destroy_all
 
-Review.create({
+Review.create!({
   product_id: 1,
-  user_id: 1, 
+  user_id: user1.id, 
   description: 'something', 
-  rating: 4
+  rating: '4'
 })
+
 
 # Review.create({
 #   product_id: Product.last.id,

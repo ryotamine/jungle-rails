@@ -24,14 +24,20 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+      <div class="col-sm-8">
+      <dl class="dl-horizontal">
       <%= form_for [@product, Review.new] do |f| %>
         <%= f.text_area :description %>
         <%= f.select :rating, rate: "60x12" %>
         <%= f.submit "Create" %>
       <% end %>
+      </div>
+      <div class="col-sm-8">
       <% @reviews.each do |review| %>
+        <%= review.user.first_name %>
         <%= review.description %>
       <% end %>
+      </div>
     </div>
   </article>
 
