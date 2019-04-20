@@ -84,4 +84,11 @@ main section.products-show {
   }
 }
 
-
+.login, 
+.register,
+.filled-cart,
+.empty-cart {
+  position: relative;
+  display: block;
+  padding: 0px 15px;
+}

@@ -45,9 +45,7 @@
         </li>
         <li>
           <% if cart.size != 0 %>
-            <%= link_to cart_path do %>
-              <a class="filled-cart"><%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)</a>
-            <% end %>
+            <a class="filled-cart" href="/cart"><%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)</a>
           <% else %>
             <a class="empty-cart" href="/"><%= fa_icon "shopping-cart" %> Cart is Empty</a>
           <% end %>
