@@ -12,7 +12,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Home', :root %>
+          <%= link_to "Home", :root %>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -29,23 +29,28 @@
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-            <span class="text-danger"><%= fa_icon 'lock', text: 'Admin' %></span>
+            <span class="text-danger"><%= fa_icon "lock", text: "Admin" %></span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Dashboard', [:admin, :root] %></li>
-            <li><%= link_to 'Products',  [:admin, :products] %></li>
+            <li><%= link_to "Dashboard", [:admin, :root] %></li>
+            <li><%= link_to "Products",  [:admin, :products] %></li>
           </ul>
         </li>
+        <li class="nav navbar-nav login">
+          <a class="login" href="/login"><%= fa_icon "lock" %> Login</a>
+        </li>
+        <li class="nav navbar-nav register">
+          <a class="register" href="/register"><%= fa_icon "user-plus" %> Register</a>
+        </li>
         <li>
-        <% if cart.size != 0 %>
-          <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+          <% if cart.size != 0 %>
+            <%= link_to cart_path do %>
+              <a class="filled-cart"><%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)</a>
+            <% end %>
+          <% else %>
+            <a class="empty-cart" href="/"><%= fa_icon "shopping-cart" %> Cart is Empty</a>
           <% end %>
-        <% else %>
-          <%= fa_icon "shopping-cart" %> Cart is Empty
-        <% end %>
         </li>
       </ul>
     </div>
