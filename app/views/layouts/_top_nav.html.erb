@@ -35,14 +35,24 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Dashboard", [:admin, :root] %></li>
             <li><%= link_to "Products",  [:admin, :products] %></li>
+            <li><%= link_to "Categories", [:admin, :categories] %></li>
           </ul>
         </li>
-        <li class="nav navbar-nav login">
-          <a class="login" href="/login"><%= fa_icon "lock" %> Login</a>
-        </li>
-        <li class="nav navbar-nav register">
-          <a class="register" href="/register"><%= fa_icon "user-plus" %> Register</a>
-        </li>
+        <% if current_user %>
+          <li class="nav navbar-nav signed-in">
+            <a class="signed-in">Signed In As: <%= current_user.email %></a>
+          </li>
+          <li class="nav navbar-nav logout">
+            <a class="logout" href="/"><%= fa_icon "sign-out" %> Logout</a>
+          </li>
+        <% else %>
+          <li class="nav navbar-nav login">
+            <a class="login" href="/login"><%= fa_icon "lock" %> Login</a>
+          </li>
+          <li class="nav navbar-nav register">
+            <a class="register" href="/register"><%= fa_icon "user-plus" %> Register</a>
+          </li>
+        <% end %>
         <li>
           <% if cart.size != 0 %>
             <a class="filled-cart" href="/cart"><%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)</a>
