@@ -1,18 +1,12 @@
 <section class="admin-products-new">
-
-  <header class="page-header">
-    <h1>Login</h1>
-  </header>
-
-<h1>Login</h1>
-
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
-
-
+  <h1>Login</h1>
+  <%= form_tag "/login" do %>
+    <div class="form-group">
+      Email: <%= text_field_tag :email %>
+    </div>
+    <div class="form-group">
+      Password: <%= password_field_tag :password %>
+    </div>
+    <%= submit_tag "Submit" %>
+  <% end %>
 </section>
