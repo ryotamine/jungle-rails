@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
+      redirect_to order, notice: "Your Order has been placed."
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
       description: "Khurram Virani's Jungle Order",
-      currency:    'cad'
+      currency:    "cad"
     )
   end
 

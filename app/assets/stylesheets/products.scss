@@ -8,9 +8,7 @@ main section.categories-show {
     justify-content: space-around;
 
     .product {
-      // flex:      1;
       max-width: 260px;
-      // so that footer within can be positioned absolutely
       position:  relative;
 
       border:        1px solid #ccc;
@@ -18,7 +16,6 @@ main section.categories-show {
       padding:       15px;
       padding-bottom: 80px;
       margin-top:    20px;
-      // margin:        10px;
 
       header img {
         max-width: 100%;
@@ -92,4 +89,8 @@ main section.products-show {
   position: relative;
   display: block;
   padding: 0px 15px;
+}
+
+.order-total {
+  float: right;
 }
