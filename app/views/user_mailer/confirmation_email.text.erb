@@ -1,9 +1,11 @@
-Welcome to example.com, <%= @user.name %>
-===============================================
+This email is a confirmation receipt from your purchase on Jungle.
  
-You have successfully signed up to example.com,
-your username is: <%= @user.login %>.
+Below is your order summary:
+<% @order.line_items.each do |item| %>
+  <%= item.product.name %>
+  <%= item.product.description %>
+<% end %>
  
-To login to the site, just follow this link: <%= @url %>.
- 
-Thanks for joining and have a great day!
+Your total: $<%= @order.total %>
+
+Thank you for your purchase!
