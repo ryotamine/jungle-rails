@@ -7,7 +7,15 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   has_secure_password
 
-  def authenticate_with_credentials(email, password)
+  def self.authenticate_with_credentials(email, password)
+    user_found = User.find_by email: email
+    if user_found && user_found.authenticate(password)
+      puts "Success"
+      user_found
+    else
+      puts "Did not work"
+      nil
+    end
   end
 
 end
