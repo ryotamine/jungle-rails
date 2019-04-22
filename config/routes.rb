@@ -32,8 +32,8 @@ Rails.application.routes.draw do
   post '/login' => 'logins#create'
   get '/logout' => 'logins#destroy'
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  get '/register' => 'users#new'
+  post '/register' => 'users#create'
 
   # namespace :user do
   #   root to: 'dashboard#show'

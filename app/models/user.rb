@@ -10,10 +10,8 @@ class User < ActiveRecord::Base
   def self.authenticate_with_credentials(email, password)
     user_found = User.find_by email: email
     if user_found && user_found.authenticate(password)
-      puts "Success"
       user_found
     else
-      puts "Did not work"
       nil
     end
   end
