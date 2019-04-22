@@ -7,8 +7,8 @@ Jungle is a mini e-commerce application built with Rails 4.2 for purposes of tea
 !["Screenshot of home page 1"](https://github.com/ryotamine/jungle-rails/blob/master/docs/home-page-1.png)
 !["Screenshot of home page 2"](https://github.com/ryotamine/jungle-rails/blob/master/docs/home-page-2.png)
 !["Screenshot of home page 3"](https://github.com/ryotamine/jungle-rails/blob/master/docs/home-page-3.png)
-!["Screenshot of product"](https://github.com/ryotamine/jungle-rails/blob/master/docs/product.png)
-!["Screenshot of checkout"](https://github.com/ryotamine/jungle-rails/blob/master/docs/checkout.png)
+!["Screenshot of product"](https://github.com/ryotamine/jungle-rails-testing/blob/master/docs/product.png)
+!["Screenshot of checkout"](https://github.com/ryotamine/jungle-rails-testing/blob/master/docs/checkout.png)
 
 ## Dependencies
 
