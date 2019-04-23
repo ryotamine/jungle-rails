@@ -1,8 +1,8 @@
 require "rails_helper"
 require "faker"
 
-RSpec.feature "Product details", type: :feature, js: true do
-
+RSpec.feature "AddToCarts", type: :feature, js: true do
+  
   # SETUP
   before :each do
     @category = Category.create! name: "Apparel"
@@ -18,11 +18,11 @@ RSpec.feature "Product details", type: :feature, js: true do
     end
   end
 
-  scenario "They see product details" do
+  scenario "They see number of items in cart" do
     visit root_path
-    page.all("article.product")[0].all("a")[0].click
-    expect(page).to have_css(".products-show .page-header h1")
-    save_screenshot "product_details.png"
+    page.find("[data-test-id=cart-btn]").click
+    expect(page).to have_css("[data-test-id=cart-btn]")
+    save_screenshot "items_cart.png"
   end
 
 end
