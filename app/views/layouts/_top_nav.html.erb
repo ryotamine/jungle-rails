@@ -54,7 +54,7 @@
           </li>
         <% end %>
         <li>
-          <a class="<%= cart.size == 0 ? 'empty-cart' : 'filled-cart'%>" href="/cart"
+          <a class="<%= cart.size == 0 ? "empty-cart" : "filled-cart"%>" href="/cart"
             data-test-id="cart-btn">
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           </a>
